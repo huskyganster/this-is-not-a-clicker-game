@@ -1,39 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button</title>
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milk Empire | Idle Dairy Tycoon</title>
+<link rel="stylesheet" href="style.css">
+<script src="game.js" defer></script>
 </head>
-
 <body>
-
-  <div class="main">
-
-    <button id="clickButton">Button</button>
-
-    <div id="counterText">
-      you just clicked it 0 times!
-    </div>
-
-    <!-- SHOP BALDI -->
-    <div id="baldiShop">
-      <img src="baldi.png" id="baldiImage" alt="Baldi">
-
-      <div class="price">
-        Watch Baldi dance his legs off — 25 clicks
-      </div>
-    </div>
-
-    <!-- DANCING BALDI -->
-    <div id="danceArea">
-      <img id="danceGif" alt="Baldi Dancing">
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="shell">
+<header class="top"><div class="brand"><span class="logo">🥛</span><div><h1>MILK EMPIRE</h1><small>FROM ONE COW TO A MILK KINGDOM</small></div></div><div class="stats"><div>💵 <b id="cash">$0</b><small>Cash</small></div><div>⭐ <b id="totalEarned">$0</b><small>Lifetime sales</small></div><div>📦 <b id="totalBottles">0</b><small>Bottles sold</small></div></div><button id="saveBtn" class="small secondary">💾 Save</button></header>
+<div class="ticker" id="message" role="status">Welcome to your dairy. Milk the cow to start!</div>
+<div class="layout"><aside class="sidebar"><div class="side-label">YOUR DAIRY</div><button class="nav active" data-tab="farm">🐄 Farm & Harvest</button><button class="nav" data-tab="factory">🥤 Milk Factory</button><button class="nav" data-tab="market">🛒 Sell Milk</button><button class="nav" data-tab="shop">🛠️ Upgrade Shop</button><button class="nav" data-tab="recipes">📖 Milk Cookbook</button><button class="nav" data-tab="achievements">🏆 Achievements</button><div class="side-foot">Idle progress capped at 8 hours.<br>Game autosaves every 10 seconds.<br><button id="resetBtn" class="link">Reset save</button></div></aside>
+<main>
+<section id="farm" class="tab active"><div class="page-head"><h2>🐄 Your Farm</h2><p>Milk cows, grow ingredients, and expand your farm.</p></div><div class="hero"><div class="cow-visual" id="cowVisual" role="img" aria-label="Cartoon cow">🐄</div><div class="cow-panel"><div class="overline">DAIRY BARN</div><h3>Your happy cows</h3><p><b id="cowCount">1</b> cows · <b id="milkPerClick">1</b> milk per click · <b id="autoMilk">0</b> milk/sec</p><div class="bar"><span id="milkBar"></span></div><p>Raw milk in storage: <b id="rawMilk">0</b> / <b id="storageCap">100</b></p><button id="milkBtn" class="primary big">🥛 MILK COW (+<span id="milkGain">1</span>)</button><p class="hint">Tap fast to collect. Your machines can milk automatically.</p></div></div><div class="section-title"><h3>🌱 Your Fields</h3><span>Plant seeds. Harvest when ready.</span></div><div id="cropGrid" class="grid"></div><div class="section-title"><h3>📦 Your Ingredient Pantry</h3></div><div id="pantry" class="inventory"></div></section>
+<section id="factory" class="tab"><div class="page-head"><h2>🥤 Milk Factory</h2><p>Combine fresh ingredients, upgrade your equipment, and bottle your creations.</p></div><div class="factory-info"><div>⚙️ Blenders <b id="blenderCount">0</b></div><div>⚡ Total processing <b id="processingSpeed">0</b>/sec</div><div>📦 Storage <b id="factoryStorage">0</b>/<b id="factoryStorageMax">100</b></div><div>🤖 Auto-bottlers <b id="autoBottlers">0</b></div></div><div class="notice" id="factoryNotice">Buy a blender from the Upgrade Shop to make flavored and plant-based milk. Raw milk can be sold immediately.</div><div class="section-title"><h3>Make Milk</h3><span>Select a recipe and press Blend.</span></div><div id="recipeGrid" class="grid recipes-grid"></div><div class="section-title"><h3>🏭 Production Queue</h3></div><div id="queueView" class="queue"></div></section>
+<section id="market" class="tab"><div class="page-head"><h2>🛒 Milk Market</h2><p>Sell your bottles, earn cash, and become a dairy mogul.</p></div><div class="market-top"><div class="panel"><h3>📈 Market demand</h3><p>Prices shift slightly every minute.</p><div id="marketTrend"></div></div><div class="panel"><h3>🏪 Your Store</h3><p>Tap sell buttons or buy an auto-seller to sell milk while idle.</p><p>Sales price multiplier: <strong id="sellMultiplier">1.00×</strong></p><button id="sellAllBtn" class="primary">💰 Sell all available milk</button></div></div><div id="sellGrid" class="grid"></div></section>
+<section id="shop" class="tab"><div class="page-head"><h2>🛠️ Upgrade Shop</h2><p>Invest your profits to grow production, storage, and sales.</p></div><div id="shopGrid" class="grid"></div></section>
+<section id="recipes" class="tab"><div class="page-head"><h2>📖 Milk Cookbook</h2><p>Discover dairy and non-dairy milks. Unlock more kinds as you earn.</p></div><div id="cookbook" class="grid"></div></section>
+<section id="achievements" class="tab"><div class="page-head"><h2>🏆 Achievements</h2><p>Keep growing to fill your trophy shelf.</p></div><div id="achievementGrid" class="grid"></div></section>
+</main></div><footer>🥛 MILK EMPIRE · Made with HTML, CSS & JavaScript · Saved locally in your browser</footer>
+</div>
+</body></html>
